@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-import sys
-import os
 """
     markdown2html.py
     Write a script markdown2html.py that takes an argument 2 strings
 """
+import sys
+import os
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print(
@@ -19,4 +20,3 @@ if __name__ == "__main__":
         sys.exit(1)
     print("")
     exit(0)
-
