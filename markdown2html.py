@@ -12,12 +12,11 @@ if __name__ == "__main__":
             file=sys.stderr
         )
         sys.exit(1)
-    else:
-        mdFile = sys.argv[1]
-        htmlFile = sys.argv[2]
+    mdFile = sys.argv[1]
+    htmlFile = sys.argv[2]
+    if not os.path.exists(mdFile):
+        print(f'Missing {mdFile}', file=sys.stderr)
+        sys.exit(1)
+    print("")
+    exit(0)
 
-        if not os.path.exists(mdFile):
-            print('Missing <filename>', file=sys.stderr)
-            sys.exit(1)
-        print("")
-        exit(0)
