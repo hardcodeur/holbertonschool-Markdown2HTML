@@ -5,21 +5,18 @@
 """
 import sys
 import os
-
-def test_nb_arg(argv=sys.argv):
-    if len(sys.argv) != 3:
-        print(
-            'Usage: ./markdown2html.py README.md README.html',
-            file=sys.stderr
-        )
-        sys.exit(1)
+import re
 
 if __name__ == "__main__":
-    test_nb_arg()
-    mdFile = sys.argv[1]
-    htmlFile = sys.argv[2]
-    if not os.path.exists(mdFile):
-        print(f'Missing {mdFile}', file=sys.stderr)
+    
+    mdFileUrl=sys.argv[1]
+    htmlFileUrl=sys.argv[2]
+
+    if len(sys.argv) != 3:
+        if len(sys.argv) < 3:
+            print('Usage: ./markdown2html.py README.md README.html',file=sys.stderr)
+        elif os.path.exists(mdFileUrl):
+            print(f'Missing {mdFileUrl}', file=sys.stderr)
         sys.exit(1)
-    print("")
-    exit(0)
+    else:
+        exit(0)
