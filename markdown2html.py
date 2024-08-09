@@ -8,13 +8,14 @@ import os
 import re
 
 if __name__ == "__main__":
-    if sys.argv[1] and sys.argv[2]:
+    if len(sys.argv) <= 3:
         print('Usage: ./markdown2html.py README.md README.html',file=sys.stderr)
         sys.exit(1)
-    elif not os.path.exists(sys.argv[2]):
-        print(f'Missing {sys.argv[2]}', file=sys.stderr)
-        sys.exit(1)
-    else:
-        print("")
-        sys.exit(0)
+    else: 
+        if not os.path.exists(sys.argv[2]):
+            print(f'Missing {sys.argv[2]}', file=sys.stderr)
+            sys.exit(1)
+        else:
+            print("")
+            sys.exit(0)
     
